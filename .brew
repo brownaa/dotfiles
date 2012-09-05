@@ -23,9 +23,8 @@ brew install homebrew/dupes/grep
 
 # Install everything else
 brew install git
-brew install mplayer
-brew install eigen
-brew install boost --with-mpi --with-icu
+brew install ssh-copy-id
+brew install multimarkdown
 brew install rename
 brew install tree
 
