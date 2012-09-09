@@ -11,6 +11,8 @@
 	dmVy0RcYVHJvb3SAAQgRGiMtMjc7QUhOW2KMjpCVoKmxtL3P0tcAAAAAAAABAQAAAAAA
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
+	<key>Bell</key>
+	<false/>
 	<key>BlinkText</key>
 	<false/>
 	<key>CommandString</key>
@@ -83,6 +85,8 @@
 	<key>UseBoldFonts</key>
 	<false/>
 	<key>UseBrightBold</key>
+	<true/>
+	<key>VisualBell</key>
 	<true/>
 	<key>blackColour</key>
 	<data>

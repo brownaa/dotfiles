@@ -1,20 +1,22 @@
 
 # Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.bash/{path,prompt,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
 
+# Don't complete on empty line
+shopt -s no_empty_cmd_completion
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
-
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
+# Hostname completion when a word contains @
+shopt -s hostcomplete
+# extended pattern matching features enabled
+shopt -s extglob
 
 # Enable some Bash 4 features when possible:
 # * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
@@ -22,6 +24,11 @@ shopt -s cdspell
 for option in autocd globstar; do
 	shopt -s "$option" 2> /dev/null
 done
+
+# grep colors
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
