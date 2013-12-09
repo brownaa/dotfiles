@@ -1,32 +1,37 @@
-#!/bin/bash
-
 # Make sure we’re using the latest Homebrew
-brew update
+update
 
 # Upgrade any already-installed formulae
-brew upgrade
+upgrade
+
+# Get git
+install git
 
 # Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
+install coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-brew install findutils
+install findutils
 # Install Bash 4
-brew install bash
+install bash
 
 # Install wget with IRI support
-brew install wget --enable-iri
+install wget --enable-iri
 
-# Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
+# Tap dupes and science
+tap homebrew/dupes
+tap homebrew/science
 
 # Install everything else
-brew install git
-brew install ssh-copy-id
-brew install multimarkdown
-brew install rename
-brew install tree
+install the_silver_searcher
+install unrar
+install ssh-copy-id
+install tree
+
+# Install boost, eigen, cmake
+install boost --c++11
+install cmake
+install eigen
 
 # Remove outdated versions from the cellar
-brew cleanup
+cleanup
