@@ -1,7 +1,6 @@
-
 # Load the shell dotfiles, and then some:
 for file in ~/.bash/{path,prompt,exports,aliases,functions,extra}; do
-	[ -r "$file" ] && source "$file"
+    [ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
 
@@ -29,11 +28,9 @@ done
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 
-
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
-
 
 ## TAB COMPLETION 
 
