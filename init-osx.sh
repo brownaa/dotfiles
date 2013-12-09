@@ -493,9 +493,9 @@ defaults write com.apple.terminal StringEncodings -array 4
 # to remove transparency
 
 # Use modified versions of Solarized in Terminal.app
-open "$dotfiles_home/init/Solarized Dark.terminal"
+open "${dotfiles_home}/init/Solarized Dark.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
-open "$dotfiles_home/init/Solarized Light.terminal"
+open "${dotfiles_home}/init/Solarized Light.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.Terminal "Default Window Settings" -string "Solarized Dark"
 defaults write com.apple.Terminal "Startup Window Settings" -string "Solarized Dark"
@@ -555,6 +555,14 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Disable continuous spell checking
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
+
+###############################################################################
+# Xcode                                                                       #
+###############################################################################
+
+xcode_themedir="${HOME}/Library/Developer/Xcode/UserData/FontAndColorThemes"
+[ -d "${xcode_themedir}" ] || mkdir "${xcode_themedir}"
+cp "${dotfiles_home}/init/Solarized Dark.dvtcolortheme" "${dotfiles_home}/init/Solarized Light.dvtcolortheme" "${xcode_themedir}"
 
 ###############################################################################
 # SizeUp.app                                                                  #
